@@ -1,29 +1,26 @@
 import socket
-import random
-
+import Funcoes_Client_TCP as FCT
+from time import sleep
 
 host = '127.0.0.1'
 port = 5000
 
-interface_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-interface_s.connect((host,port))
-
-
-#---------------------------------#
 while True:
-    pot = random.randint(0,29)
-    choice = str(random.randint(10**pot, (10**(pot+1))-1))
+    interface_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    teste = input("Digite o comando SAIR caso queira sair, caso contrário,\na próxima string será enviada: ")
-    if(teste.upper() == "SAIR"):
-        print("fechando conexão com o servidor")
-        interface_s.sendall(str.encode(teste))
+    interface_s.connect((host,port))
+#---------------------------------#
 
-    if(teste.upper() != "SAIR"):
-        interface_s.sendall(str.encode(choice))
-        data = interface_s.recv(1024)
-        print('mensagem do servidor:',data.decode() + "\n FIM")
+    msg_cliente = FCT.geracao_n()
 
-    else:
-        break
+    interface_s.sendall(str.encode(msg_cliente))
+
+    data = interface_s.recv(1024)
+    print('Mensagem do servidor: ', data.decode())
+    
+
+    for i in range(10):
+        sleep(1)
+        print("\nesperando recomeço de ciclo, passou " + [i+1] +" segundos")
+
+    
