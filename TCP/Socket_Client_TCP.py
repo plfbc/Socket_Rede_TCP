@@ -23,7 +23,7 @@ while True:
     if(teste.upper() != "SAIR"):
         interface_s.sendall(str.encode(choice))
         data = interface_s.recv(1024)
-        print('mensagem do servidor:',data.decode())
+        print('mensagem do servidor:',data.decode() + "\n FIM")
 
     else:
         break
