@@ -16,11 +16,12 @@ while True:
     interface_s.sendall(str.encode(msg_cliente))
 
     data = interface_s.recv(1024)
+    print(f'string original: {msg_cliente}')
     print('Mensagem do servidor: ', data.decode())
     
 
     for i in range(10):
         sleep(1)
-        print("\nesperando recomeço de ciclo, passou " + [i+1] +" segundos")
+        print(f"\nesperando recomeço de ciclo, passou {i+1} segundos")
 
     

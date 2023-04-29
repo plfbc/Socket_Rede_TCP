@@ -2,7 +2,7 @@ import random
 import math
 
 def geracao_n() -> str:
-    num_max = math.pow(10, 30) - 1
-    numero = random.randint(0, num_max)
+    pot = random.randint(0,29)
+    choice = str(random.randint(10**pot, (10**(pot+1))-1))
     
-    return str(numero)
+    return str(choice)
