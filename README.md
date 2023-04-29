@@ -7,3 +7,8 @@
 ### Pedro de Carvalho Chaaban
 
 # **Os SOCKETs**: 
+> Nessa representação de sockets de redes da camada de aplicação teram 2 sockets:
+>- Socket Cliente: Socket_Client_TCP: Responsavel por fazer as requisições e receber respostas do server, 
+> no caso gerar um número de até 30 dígitos e envia-lo. 
+>- Socket Servidor: Socket_Server_TCP: Responsável por receber as requisições do cliente e enviar resposta,
+> no caso verifica se o número gerado tem até 10 digitos, assim verificando se ele é par ou impar, caso tenha mais de 10 gera uma string aleatoria usando a biblioteca string+random.
