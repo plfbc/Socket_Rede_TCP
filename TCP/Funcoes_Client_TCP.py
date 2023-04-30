@@ -1,5 +1,4 @@
 import random
-import math
 
 def geracao_n() -> str:
     pot = random.randint(0,29)
