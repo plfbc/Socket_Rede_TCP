@@ -9,7 +9,7 @@ while True:
     interface_s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     interface_s.connect((host,port))
-    print('Conexão feita com: {host}:{port}')
+    print(f'Conexão feita com: {host}:{port}')
 #--------------------------------------------------------------------#
 # Essa fração do código é responsável por interagir com o servidor, enviando mensagens e recebendo
     msg_cliente = FCT.geracao_n()
