@@ -1,6 +1,8 @@
 import random
 import string as st
 
+# A função abaixo fornece a resposta final do servidor ao cliente
+# Seu fluxo é dado pela verificação do número de casas decimais do argumento recebido e a consequente formulação da resposta.
 
 def server_resp(str_cli:str) -> str:
 
