@@ -16,9 +16,8 @@ while True:
     conn,ender = interface_s.accept()
     print('Sucesso ao conectar com',ender)
 
-
-    #-----------------------------------------
-
+#----------------------------------------------------------------#
+# Fração do código responsável por interagir com o cliente, recebendo e enviando mensagens
     data = conn.recv(1024)
 
     str_cli = str(data.decode())
