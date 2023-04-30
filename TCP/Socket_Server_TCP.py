@@ -21,6 +21,8 @@ while True:
     data = conn.recv(1024)
 
     str_cli = str(data.decode())
+    print(f'String original: {str_cli}')
+    
     str_resp = FST.server_resp(str_cli)
 
     str_resp = str.encode(str_resp)
